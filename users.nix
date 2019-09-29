@@ -5,12 +5,12 @@ let hashedPassword = import ./.hashedPassword.nix; in # echo "\"$(mkpasswd -m sh
 
 {
   users.users.maxim = {
-  isNormalUser = true;
-  home = "/home/maxim";
-  description = "maxim";
-  extraGroups = [ "wheel" "sudoers" "audio" "video" "disk" "networkmanager" "plugdev"];
-  uid = 1000;
-  hashedPassword = hashedPassword;
+    isNormalUser = true;
+    home = "/home/maxim";
+    description = "maxim";
+    extraGroups = [ "wheel" "sudoers" "audio" "video" "disk" "networkmanager" "plugdev"];
+    uid = 1000;
+    hashedPassword = hashedPassword;
   };
 
 }
