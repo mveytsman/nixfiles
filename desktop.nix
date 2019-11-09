@@ -31,7 +31,7 @@
     firefox
     kitty
     vim
-    emacs26
+    emacs
     git
     cmake
   ];
