@@ -29,20 +29,19 @@
     networkmanagerapplet
 
     firefox
-    kitty
+    alacritty
     vim
     emacs
     git
     cmake
 
-    discord
-
     python
   ];
 
   # flatpak  
+  xdg.portal.enable = true;
   services.flatpak.enable = true;
-  services.flatpak.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
   services.clipmenu.enable = true;
   # Based on https://github.com/cdown/clipmenu/blob/develop/init/clipmenud.service
@@ -73,5 +72,5 @@
     emojione
   ];
 
-  environment.sessionVariables.TERMINAL = [ "kitty" ];
+  environment.sessionVariables.TERMINAL = [ "alacritty" ];
 }
