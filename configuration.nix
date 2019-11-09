@@ -25,6 +25,10 @@
   boot.resumeDevice = "/dev/cryptswap";
 
   networking.hostName = "conrad"; # Define your hostname.
+  networking.extraHosts = ''
+    155.138.147.72 marquez
+  '';
+
   #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -92,6 +96,6 @@
   # compatible, in order to avoid breaking some software such as database
   # servers. You should change this only after NixOS release notes say you
   # should.
-  system.stateVersion = "19.03"; # Did you read the comment?
+  system.stateVersion = "19.09"; # Did you read the comment?
 
 }
