@@ -34,6 +34,10 @@
     emacs
     git
     cmake
+
+    discord
+
+    python
   ];
 
   # flatpak  
