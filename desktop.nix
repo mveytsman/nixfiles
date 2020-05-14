@@ -10,13 +10,10 @@
 
   networking.networkmanager.enable = true;
   networking.networkmanager.wifi.macAddress = "random";
-	
-  i18n = {
-    consoleFont = "${pkgs.terminus_font}/share/consolefonts/ter-u28n.psf.gz";
-    consoleKeyMap = "us";
-    defaultLocale = "en_US.UTF-8";
-  };
- 
+
+  console.font = "${pkgs.terminus_font}/share/consolefonts/ter-u28n.psf.gz";
+  console.keyMap = "us";
+  i18n.defaultLocale = "en_US.UTF-8";
 
   sound.enable = true;
  
