@@ -29,6 +29,7 @@
     alacritty
     vim
     emacs
+    vscode
     git
     cmake
 
