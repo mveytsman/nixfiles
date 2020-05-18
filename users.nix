@@ -8,7 +8,7 @@ let hashedPassword = import ./.hashedPassword.nix; in # echo "\"$(mkpasswd -m sh
     isNormalUser = true;
     home = "/home/maxim";
     description = "maxim";
-    extraGroups = [ "wheel" "sudoers" "audio" "video" "disk" "networkmanager" "plugdev"];
+    extraGroups = [ "wheel" "sudoers" "audio" "video" "disk" "networkmanager" "plugdev" "docker"];
     uid = 1000;
     hashedPassword = hashedPassword;
   };
