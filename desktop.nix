@@ -16,12 +16,23 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
   sound.enable = true;
- 
+  
+  hardware.sane.enable = true;
+  hardware.pulseaudio = {
+    enable = true;
+    # Need full for bluetooth support
+    package = pkgs.pulseaudioFull;
+    extraModules = [ pkgs.pulseaudio-modules-bt ];
+  };
+
   environment.systemPackages = with pkgs; [
     i3status-rust
     rofi
     clipmenu
     clipnotify
+
+    lxrandr
+    pavucontrol
 
     networkmanagerapplet
 
@@ -34,6 +45,8 @@
     cmake
 
     python
+
+    nixfmt
   ];
 
   # flatpak  
