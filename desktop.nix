@@ -8,6 +8,8 @@
   services.xserver.windowManager.i3.enable = true;
   services.xserver.libinput.enable = true;
 
+  services.colord.enable = true;
+
   networking.networkmanager.enable = true;
   networking.networkmanager.wifi.macAddress = "random";
 
@@ -25,35 +27,12 @@
     extraModules = [ pkgs.pulseaudio-modules-bt ];
   };
 
-  environment.systemPackages = with pkgs; [
-    i3status-rust
-    rofi
-    clipmenu
-    clipnotify
-
-    lxrandr
-    pavucontrol
-
-    networkmanagerapplet
-
-    firefox
-    alacritty
-    vim
-    emacs
-    vscode
-    git
-    cmake
-
-    python
-
-    nixfmt
-  ];
-
   # flatpak  
   xdg.portal.enable = true;
   services.flatpak.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-
+  services.accounts-daemon.enable = true; # Required for flatpak+xdg
+  
   services.clipmenu.enable = true;
   # Based on https://github.com/cdown/clipmenu/blob/develop/init/clipmenud.service
   systemd.user.services.clipmenud = {
