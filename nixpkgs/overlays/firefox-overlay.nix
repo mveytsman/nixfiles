@@ -1,0 +1,1 @@
+/home/maxim/projects/nixpkgs-mozilla/firefox-overlay.nix
