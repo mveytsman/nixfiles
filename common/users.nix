@@ -1,4 +1,4 @@
-let hashedPassword = import ./.hashedPassword.nix; in # echo "\"$(mkpasswd -m sha-512)\"" > .hashedPassword.nix; chmod 400 .hashedPassword.nix
+let hashedPassword = import ../secrets/hashedPassword.nix; in # echo "\"$(mkpasswd -m sha-512)\"" > .hashedPassword.nix; chmod 400 .hashedPassword.nix
 # make sure it's in gitignore!!
 
 { config, pkgs, lib, ... }:
@@ -12,5 +12,7 @@ let hashedPassword = import ./.hashedPassword.nix; in # echo "\"$(mkpasswd -m sh
     uid = 1000;
     hashedPassword = hashedPassword;
   };
-
+  imports = [
+    (import "${builtins.fetchTarball https://github.com/rycee/home-manager/archive/master.tar.gz}/nixos")
+  ];
 }

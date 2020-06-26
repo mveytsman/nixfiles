@@ -1,13 +1,9 @@
 { config, pkgs, ... }:
 
 {
+  nixpkgs.config.allowUnfree = true;
   # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
-
-  # Home Manager needs a bit of information about you and the
-  # paths it should manage.
-  home.username = "maxim";
-  home.homeDirectory = "/home/maxim";
+  # programs.home-manager.enable = true;
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
@@ -17,7 +13,7 @@
   # You can update Home Manager without changing this value. See
   # the Home Manager release notes for a list of state version
   # changes in each release.
-  home.stateVersion = "20.09";
+  #home.stateVersion = "20.09";
 
   #imports = [ ./gigalixir.nix ];
   home.packages = with pkgs; [
@@ -31,6 +27,7 @@
     xclip
 
     # programming
+    git
     alacritty
     vim
     emacs
@@ -55,6 +52,11 @@
     # games
     steam-run
   ];
+
+  programs.git = {
+    userEmail =  "maxim@ontoillogical.com";
+    userName = "Max Veytsman";
+  };
 
   # setup vscode for live share
   imports = [

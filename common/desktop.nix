@@ -10,9 +10,6 @@
 
   services.colord.enable = true;
 
-  networking.networkmanager.enable = true;
-  networking.networkmanager.wifi.macAddress = "random";
-
   console.font = "${pkgs.terminus_font}/share/consolefonts/ter-u28n.psf.gz";
   console.keyMap = "us";
   i18n.defaultLocale = "en_US.UTF-8";
