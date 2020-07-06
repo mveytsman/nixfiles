@@ -2,10 +2,10 @@
 
 {
 
-  nix.nixPath = [
-    "nixos-config=/etc/nixos/hosts/${config.networking.hostName}/default.nix"
-  ];
-  environment.systemPackages = with pkgs; [ home-manager ];
+ #nix.nixPath = [
+ #   "nixos-config=/etc/nixos/hosts/${config.networking.hostName}/default.nix"
+ # ];
+  environment.systemPackages = with pkgs; [ silver-searcher home-manager ];
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;

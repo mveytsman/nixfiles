@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# From https://discourse.nixos.org/t/how-to-change-nix-path/4864/2
+cd "$(dirname "$0")"
+exec nixos-rebuild -I nixos-config=hosts/$(hostname)/default.nix "$@"
