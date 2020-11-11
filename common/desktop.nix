@@ -1,13 +1,21 @@
-{ pkgs, ... }:
-{
-  imports = [];
-
-  services.xserver.enable = true;
-  services.xserver.xkbOptions = "grp:alt_space_toggle, ctrl:nocaps";
-  
-  services.xserver.windowManager.i3.enable = true;
-  services.xserver.libinput.enable = true;
-
+{ pkgs, ... }: {
+  imports = [ ];
+  services.xserver = {
+    enable = true;
+    xkbOptions = "grp:alt_space_toggle, ctrl:nocaps";
+    desktopManager.xfce = {
+      enable = true;
+      noDesktop = true;
+      enableXfwm = true;
+    };
+    windowManager.i3 = {
+      enable = true;
+      package = pkgs.i3-gaps;
+    };
+    libinput = {
+      enable = true;
+    };
+  };
   services.colord.enable = true;
 
   console.font = "${pkgs.terminus_font}/share/consolefonts/ter-u28n.psf.gz";
@@ -15,7 +23,7 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
   sound.enable = true;
-  
+
   hardware.sane.enable = true;
   hardware.pulseaudio = {
     enable = true;
@@ -29,12 +37,12 @@
   services.flatpak.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   services.accounts-daemon.enable = true; # Required for flatpak+xdg
-  
+
   services.clipmenu.enable = true;
   # Based on https://github.com/cdown/clipmenu/blob/develop/init/clipmenud.service
   systemd.user.services.clipmenud = {
     description = "Clipmenu daemon";
-    serviceConfig =  {
+    serviceConfig = {
       Type = "simple";
       NoNewPrivileges = true;
       ProtectControlGroups = true;
@@ -43,9 +51,7 @@
       MemoryDenyWriteExecute = true;
     };
     wantedBy = [ "default.target" ];
-    environment = {
-      DISPLAY = ":0";
-    };
+    environment = { DISPLAY = ":0"; };
     path = [ pkgs.clipmenu ];
     script = ''
       ${pkgs.clipmenu}/bin/clipmenud
@@ -55,7 +61,7 @@
   fonts.fonts = with pkgs; [
     dejavu_fonts
     terminus
-    nerdfonts  # Includes font-awesome, material-icons, powerline-fonts
+    nerdfonts # Includes font-awesome, material-icons, powerline-fonts
     emojione
   ];
 

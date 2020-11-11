@@ -3,7 +3,7 @@
 {
   nixpkgs.config.allowUnfree = true;
   # Let Home Manager install and manage itself.
-  # programs.home-manager.enable = true;
+  programs.home-manager.enable = true;
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
@@ -27,12 +27,10 @@
     xclip
 
     # programming
-    git
     alacritty
     vim
     emacs
     vscode
-    git
     cmake
     python
     nixfmt
@@ -43,6 +41,11 @@
     google-chrome
     standardnotes
     evince
+    discord
+    slack
+    zulip
+    bitwarden
+    standardnotes
 
     # utilities
     lxrandr
@@ -54,12 +57,14 @@
   ];
 
   programs.git = {
-    userEmail =  "maxim@ontoillogical.com";
+    enable = true;
+    userEmail = "maxim@ontoillogical.com";
     userName = "Max Veytsman";
   };
 
   # setup vscode for live share
   imports = [
+   # ./i3.nix
     "${
       fetchTarball "https://github.com/msteen/nixos-vsliveshare/tarball/master"
     }/modules/vsliveshare/home.nix"
