@@ -25,7 +25,7 @@
 
   # Set up for my multimonitor situation
   services.xserver.screenSection = ''
-    Option         "metamodes" "DVI-D-0: nvidia-auto-select +3840+0 {rotation=right, ForceCompositionPipeline=On}, DP-0: nvidia-auto-select +0+200 {ForceCompositionPipeline=On, ForceFullCompositionPipeline=On}"
+    Option         "metamodes" "DVI-D-0: nvidia-auto-select +0+0 {rotation=right, ForceCompositionPipeline=On}, DP-0: nvidia-auto-select +1440+200 {ForceCompositionPipeline=On, ForceFullCompositionPipeline=On}"
   '';
   networking.hostName = "caro"; # Define your hostname.
 }
