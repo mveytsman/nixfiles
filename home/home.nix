@@ -15,9 +15,7 @@
   # changes in each release.
   #home.stateVersion = "20.09";
 
-  #imports = [ ./gigalixir.nix ];
   home.packages = with pkgs; [
-    # i3
     i3status-rust
     upower
     rofi
@@ -64,7 +62,7 @@
 
   # setup vscode for live share
   imports = [
-   # ./i3.nix
+    #./i3.nix
     "${
       fetchTarball "https://github.com/msteen/nixos-vsliveshare/tarball/master"
     }/modules/vsliveshare/home.nix"
