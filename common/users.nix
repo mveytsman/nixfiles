@@ -1,6 +1,4 @@
-let hashedPassword = import ../secrets/hashedPassword.nix; in # echo "\"$(mkpasswd -m sha-512)\"" > .hashedPassword.nix; chmod 400 .hashedPassword.nix
-# make sure it's in gitignore!!
-
+let hashedPassword = import ../secrets/hashedPassword.nix; in 
 { config, pkgs, lib, ... }:
 
 {

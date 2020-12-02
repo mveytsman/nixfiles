@@ -7,6 +7,7 @@ System
 - clone this repo into `/etc/nixos`
 
 ```
+mkdir -p /etc/nixos/secrets/
 echo \"$(mkpasswd -m sha-512)\" > /etc/nixos/secrets/hashedPassword.nix
 export NIXOS_CONFIG=/etc/nixos/hosts/$HOST/default.nix
 nixos-rebuild switch
