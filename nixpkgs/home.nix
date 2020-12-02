@@ -19,6 +19,7 @@
   # changes in each release.
   home.stateVersion = "20.09";
 
+  nixpkgs.overlays = [ (import ./overlays/burppro.nix) ];
   #imports = [ ./gigalixir.nix ];
   home.packages = with pkgs; [
     # i3
@@ -31,6 +32,7 @@
     xclip
 
     # programming
+    ag
     alacritty
     vim
     emacs
@@ -39,7 +41,10 @@
     cmake
     python
     nixfmt
-    (callPackage ./gigalixir.nix {  })
+    (callPackage ./gigalixir.nix { })
+
+    # security
+    burppro
 
     # browser & apps
     firefox-bin
