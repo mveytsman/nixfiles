@@ -5,15 +5,14 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-       ../common/boot.nix
-    ../common/desktop.nix
-    ../common/system.nix
-    ../common/users.nix
-      ../hardware/thinkpad-yogax1.nix
-    ];
+  imports = [ # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ../../common/boot.nix
+    ../../common/desktop.nix
+    ../../common/system.nix
+    ../../common/users.nix
+    ../../hardware/thinkpad-yogax1.nix
+  ];
 
   networking.hostName = "conrad"; # Define your hostname.
 
