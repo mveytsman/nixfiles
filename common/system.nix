@@ -2,9 +2,9 @@
 
 {
 
- #nix.nixPath = [
- #   "nixos-config=/etc/nixos/hosts/${config.networking.hostName}/default.nix"
- # ];
+  #nix.nixPath = [
+  #   "nixos-config=/etc/nixos/hosts/${config.networking.hostName}/default.nix"
+  # ];
   environment.systemPackages = with pkgs; [ silver-searcher home-manager ];
 
   # Allow unfree packages
@@ -15,6 +15,13 @@
 
   # Timezone
   time.timeZone = "America/Toronto";
+
+  # Common networking
+  networking.extraHosts = ''
+    155.138.147.72 marquez
+  '';
+  
+  networking.nameservers = [ "1.1.1.1" ];
 
   # This value determines the NixOS release with which your system is to be
   # compatible, in order to avoid breaking some software such as database
