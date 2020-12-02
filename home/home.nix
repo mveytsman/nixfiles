@@ -15,7 +15,7 @@
   # changes in each release.
   #home.stateVersion = "20.09";
 
-  nixpkgs.overlays = [ (import ./overlays/burppro.nix) ];
+  nixpkgs.overlays = [ (import ./overlays/burppro.nix) (import ./overlays/gigalixir.nix) ];
 
   home.packages = with pkgs; [
     i3status-rust
@@ -35,7 +35,7 @@
     cmake
     python
     nixfmt
-    (callPackage ./gigalixir.nix { })
+    gigalixir
 
     # security
     burppro
