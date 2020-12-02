@@ -1,13 +1,9 @@
 { config, pkgs, ... }:
 
 {
+  nixpkgs.config.allowUnfree = true;
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-
-  # Home Manager needs a bit of information about you and the
-  # paths it should manage.
-  home.username = "maxim";
-  home.homeDirectory = "/home/maxim";
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
@@ -17,12 +13,11 @@
   # You can update Home Manager without changing this value. See
   # the Home Manager release notes for a list of state version
   # changes in each release.
-  home.stateVersion = "20.09";
+  #home.stateVersion = "20.09";
 
   nixpkgs.overlays = [ (import ./overlays/burppro.nix) ];
-  #imports = [ ./gigalixir.nix ];
+
   home.packages = with pkgs; [
-    # i3
     i3status-rust
     upower
     rofi
@@ -37,7 +32,6 @@
     vim
     emacs
     vscode
-    git
     cmake
     python
     nixfmt
@@ -51,6 +45,11 @@
     google-chrome
     standardnotes
     evince
+    discord
+    slack
+    zulip
+    bitwarden
+    standardnotes
 
     # utilities
     lxrandr
@@ -61,8 +60,15 @@
     steam-run
   ];
 
+  programs.git = {
+    enable = true;
+    userEmail = "maxim@ontoillogical.com";
+    userName = "Max Veytsman";
+  };
+
   # setup vscode for live share
   imports = [
+    #./i3.nix
     "${
       fetchTarball "https://github.com/msteen/nixos-vsliveshare/tarball/master"
     }/modules/vsliveshare/home.nix"
