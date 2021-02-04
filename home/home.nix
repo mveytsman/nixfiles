@@ -15,7 +15,7 @@
   # changes in each release.
   #home.stateVersion = "20.09";
 
-  nixpkgs.overlays = [ (import ./overlays/burppro.nix) (import ./overlays/gigalixir.nix) ];
+  nixpkgs.overlays = [ (import ./overlays/burppro.nix) (import ./overlays/standardnotes.nix)];
 
   home.packages = with pkgs; [
     i3status-rust
@@ -33,9 +33,7 @@
     emacs
     vscode
     cmake
-    python
     nixfmt
-    gigalixir
 
     # security
     burppro
@@ -43,7 +41,6 @@
     # browser & apps
     firefox-bin
     google-chrome
-    standardnotes
     evince
     discord
     slack
