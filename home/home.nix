@@ -13,7 +13,7 @@
   # You can update Home Manager without changing this value. See
   # the Home Manager release notes for a list of state version
   # changes in each release.
-  #home.stateVersion = "20.09";
+  home.stateVersion = "20.09";
 
   nixpkgs.overlays = [ (import ./overlays/burppro.nix) (import ./overlays/standardnotes.nix)];
 
@@ -41,6 +41,7 @@
     # browser & apps
     firefox-bin
     google-chrome
+    brave
     evince
     discord
     slack
