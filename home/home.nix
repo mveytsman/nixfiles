@@ -14,6 +14,11 @@
   # the Home Manager release notes for a list of state version
   # changes in each release.
   home.stateVersion = "20.09";
+  
+  # TODO can we pull these out of users.nix?
+  home.username = "maxim";
+  home.homeDirectory = "/users/maxim";
+
 
   nixpkgs.overlays = [ (import ./overlays/burppro.nix) (import ./overlays/standardnotes.nix)];
 
@@ -43,11 +48,17 @@
     google-chrome
     brave
     evince
+    bitwarden
+
+    # chat
     discord
     slack
     zulip
-    bitwarden
+    zoom-us
+    
+    # organization
     standardnotes
+    obsidian
 
     # utilities
     lxrandr
