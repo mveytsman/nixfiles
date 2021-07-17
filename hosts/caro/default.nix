@@ -30,20 +30,18 @@
 
   # Set up the trackball
   # https://www.reddit.com/r/Trackballs/comments/n9bg2d/so_i_wanted_to_use_inertia_scroll/
-  # this still doesn't- work :(
   services.xserver.inputClassSections = [''
     Identifier "Kensington Slimblade Trackball"
     #MatchVendor "Kensington"
     #MatchProduct "SlimBlade Trackball"
     MatchIsPointer "on"
-   
-    #Driver       "libinput"
+    Driver       "libinput"
     Option "SendCoreEvents" "true"
-    Option "ButtonMapping" "3 2 1 4 5 6 7 2"
+    Option "ButtonMapping" "1 8 3 4 5 6 7 9"
     Option "EmulateWheel" "false"
     Option "EmulateWheelButton" "0"
     Option "EmulateWheelInertia" "30"
-    #Option "DragLockButtons" "2 1"
+    # Option "DragLockButtons" "2 1"
     Option "XAxisMapping" "6 7"
     Option "YAxisMapping" "4 5"
     Option "AccelerationProfile" "2"
