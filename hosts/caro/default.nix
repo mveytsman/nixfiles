@@ -39,4 +39,6 @@
         Option          "ButtonMapping"         "1 8 3 4 5 2 8 9"
   ''];
   networking.hostName = "caro"; # Define your hostname.
+
+  networking.networkmanager.enable = true;
 }
