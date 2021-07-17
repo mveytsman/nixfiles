@@ -29,14 +29,29 @@
   '';
 
   # Set up the trackball
+  # https://www.reddit.com/r/Trackballs/comments/n9bg2d/so_i_wanted_to_use_inertia_scroll/
+  # this still doesn't- work :(
   services.xserver.inputClassSections = [''
-        Identifier      "Trackball"
-        MatchProduct    "Kensington Expert Mouse"
-        Driver          "evdev"
-        Option          "ZAxisMapping"          "4 5"
-        # four real buttons and the scroll wheel:
-        Option          "Buttons"               "8"
-        Option          "ButtonMapping"         "1 8 3 4 5 2 8 9"
+    Identifier "Kensington Slimblade Trackball"
+    #MatchVendor "Kensington"
+    #MatchProduct "SlimBlade Trackball"
+    MatchIsPointer "on"
+   
+    #Driver       "libinput"
+    Option "SendCoreEvents" "true"
+    Option "ButtonMapping" "3 2 1 4 5 6 7 2"
+    Option "EmulateWheel" "false"
+    Option "EmulateWheelButton" "0"
+    Option "EmulateWheelInertia" "30"
+    #Option "DragLockButtons" "2 1"
+    Option "XAxisMapping" "6 7"
+    Option "YAxisMapping" "4 5"
+    Option "AccelerationProfile" "2"
+    Option "AccelerationThreshold" "0"
+    Option "AccelerationNumerator" "34"
+    Option "AccelerationDenominator" "12"
+    Option "AdaptiveDeceleration" "3"
+    Option "VelocityScale" "2"
   ''];
   networking.hostName = "caro"; # Define your hostname.
 
