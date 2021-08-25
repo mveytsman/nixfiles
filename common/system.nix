@@ -21,6 +21,10 @@
     155.138.147.72 marquez
     192.168.2.15 vidal
   '';
+
+  services.syncthing = {
+    enable = true;
+  };
   
   fileSystems."/mnt/vidal/includesec" = {
       device = "//vidal/includesec";
