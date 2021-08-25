@@ -59,6 +59,7 @@
     # organization
     standardnotes
     obsidian
+    logseq
 
     # utilities
     lxrandr
