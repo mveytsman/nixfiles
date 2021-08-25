@@ -5,7 +5,7 @@
   #nix.nixPath = [
   #   "nixos-config=/etc/nixos/hosts/${config.networking.hostName}/default.nix"
   # ];
-  environment.systemPackages = with pkgs; [ silver-searcher home-manager ];
+  environment.systemPackages = with pkgs; [ silver-searcher home-manager tailscale ];
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -23,8 +23,13 @@
   '';
 
   services.syncthing = {
-    enable = true;
+      enable = true;
+      user = "maxim";
+      dataDir = "/home/maxim/Documents";
+      configDir = "/home/maxim/Documents/.config/syncthing";
   };
+
+  services.tailscale.enable = true;
   
   fileSystems."/mnt/vidal/includesec" = {
       device = "//vidal/includesec";
