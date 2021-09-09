@@ -24,6 +24,7 @@
 
   home.packages = with pkgs; [
     i3status-rust
+    lm_sensors
     upower
     rofi
     clipmenu
