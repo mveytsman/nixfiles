@@ -17,8 +17,6 @@
     };
   };
   services.colord.enable = true;
-
-  console.font = "${pkgs.terminus_font}/share/consolefonts/ter-u28n.psf.gz";
   console.keyMap = "us";
   i18n.defaultLocale = "en_US.UTF-8";
 
@@ -60,7 +58,6 @@
 
   fonts.fonts = with pkgs; [
     dejavu_fonts
-    terminus
     nerdfonts # Includes font-awesome, material-icons, powerline-fonts
     emojione
   ];
