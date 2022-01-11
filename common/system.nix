@@ -5,7 +5,7 @@
   #nix.nixPath = [
   #   "nixos-config=/etc/nixos/hosts/${config.networking.hostName}/default.nix"
   # ];
-  environment.systemPackages = with pkgs; [ silver-searcher home-manager tailscale ];
+  environment.systemPackages = with pkgs; [ silver-searcher tailscale ];
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -48,5 +48,5 @@
   # compatible, in order to avoid breaking some software such as database
   # servers. You should change this only after NixOS release notes say you
   # should.
-  system.stateVersion = "20.03"; # Did you read the comment?
+  system.stateVersion = "21.11"; # Did you read the comment?
 }
