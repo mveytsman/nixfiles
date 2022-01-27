@@ -3,10 +3,10 @@
 {
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ./common/boot.nix
-    ./common/desktop.nix
-    ./common/system.nix
-    ./common/users.nix
+    ../../common/boot.nix
+    ../../common/desktop.nix
+    ../../common/system.nix
+    ../../common/users.nix
   ];
 
   hardware.opengl.extraPackages = with pkgs; [
