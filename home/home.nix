@@ -98,4 +98,15 @@
       "https://github.com/NixOS/nixpkgs/tarball/61cc1f0dc07c2f786e0acfd07444548486f4153b";
   };
 
+  services.redshift = {
+    enable = true;
+    #provider = "geoclue2";
+    provider = "manual";
+    latitude = "43.65";
+    longitude = "-79.38";
+    temperature.day = 5700;
+    temperature.night = 3500;
+    settings.redshift.brightness-day = "1.0";
+    settings.redshift.brightness-night = "0.7";
+  };
 }
