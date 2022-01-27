@@ -41,7 +41,7 @@
   
   services.redshift = {
     enable = true;
-    location.provider = "geoclue2";
+    provider = "geoclue2";
       #provider = "geoclue2";
    #   provider = "manual";
    #   latitude = "43.65";
