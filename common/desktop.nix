@@ -41,13 +41,7 @@
   
   services.redshift = {
     enable = true;
-    provider = "geoclue2";
-      #provider = "geoclue2";
-   #   provider = "manual";
-   #   latitude = "43.65";
-     # longitude = "-79.38";
-    #};
-    
+   
     temperature = {
       day = 5700;
       night = 3500;
@@ -58,7 +52,14 @@
       night = "0.7";
     };
   };
-
+  
+  location = {
+    #provider = "geoclue2";
+    provider = "manual";
+    latitude = "43.65";
+    longitude = "-79.38";
+  };
+    
   fonts.fonts = with pkgs; [
     dejavu_fonts
     nerdfonts # Includes font-awesome, material-icons, powerline-fonts
