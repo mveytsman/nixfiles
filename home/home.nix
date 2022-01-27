@@ -77,6 +77,12 @@
     userName = "Max Veytsman";
   };
 
+  # config
+
+  home.file.".config/i3/config".source = ./config/i3/config;
+    home.file.".config/i3//i3status-rs.toml".source = ./config/i3/i3status-rs.toml;
+
+
   # setup vscode for live share
   imports = [
     #./i3.nix

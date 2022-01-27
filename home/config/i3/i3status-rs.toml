@@ -1,0 +1,31 @@
+theme = "gruvbox-dark"
+icons = "awesome"
+
+[[block]]
+block = "battery"
+format = "{percentage}% {time}"
+
+[[block]]
+block = "memory"
+display_type = "memory"
+format_mem = "{Mug}GB ({Mup}%)"
+format_swap = "{SUp}%"
+
+[[block]]
+block = "cpu"
+interval = 1
+format = "{barchart} {utilization}%"
+
+[[block]]
+block = "load"
+interval = 1
+format = "{1m}"
+
+[[block]]
+block = "sound"
+on_click = "pavucontrol"
+
+[[block]]
+block = "time"
+interval = 60
+format = "%a %Y-%m-%d %I:%M"
