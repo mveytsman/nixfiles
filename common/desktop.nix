@@ -56,8 +56,8 @@
   location = {
     #provider = "geoclue2";
     provider = "manual";
-    latitude = "43.65";
-    longitude = "-79.38";
+    latitude = 43.65;
+    longitude = -79.38;
   };
     
   fonts.fonts = with pkgs; [
