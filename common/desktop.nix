@@ -39,6 +39,17 @@
   services.clipmenu.enable = true;
   # Based on https://github.com/cdown/clipmenu/blob/develop/init/clipmenud.service
   
+  services.redshift = {
+    enable = true;
+    #provider = "geoclue2";
+    provider = "manual";
+    latitude = "43.65";
+    longitude = "-79.38";
+    temperature.day = 5700;
+    temperature.night = 3500;
+    brightness.day = "1.0";
+    brightness.night = "0.7";
+  };
 
   fonts.fonts = with pkgs; [
     dejavu_fonts
