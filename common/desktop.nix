@@ -1,5 +1,11 @@
 { pkgs, ... }: {
   imports = [ ];
+  nix = {
+    package = pkgs.nixFlakes; # or versioned attributes like nix_2_7
+    extraOptions = ''
+      experimental-features = nix-command flakes
+    '';
+  };
   services.xserver = {
     enable = true;
     xkbOptions = "grp:alt_space_toggle, ctrl:nocaps";
